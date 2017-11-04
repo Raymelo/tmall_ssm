@@ -1,0 +1,14 @@
+/.idea/
+*.iml
+*/.settings/*
+.settings/*
+*/bin/
+*/logs/
+*/.classpath
+*/.project
+.project
+/.settings/
+*/*.bak
+*/target/*
+*/.DS_Store
+rebel.xml
