@@ -34,4 +34,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void delete(int id) {
         categoryMapper.delete(id);
     }
+
+    @Override
+    public Category get(int id) {
+        return categoryMapper.get(id);
+    }
 }
