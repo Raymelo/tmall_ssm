@@ -1,15 +1,15 @@
 package com.how2java.tmall.pojo;
 
 public class Category {
+    private Integer id;
 
-    private int id;
     private String name;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
