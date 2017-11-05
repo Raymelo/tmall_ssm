@@ -72,7 +72,7 @@
                         <td><input id="categoryPic" accept="image/*" type="file" name="image"/></td>
                     </tr>
                     <tr class="submitTR">
-                        <td colspan="2" align="center">
+                        <td colspan="2">
                             <input type="submit" class="btn btn-success" value="提 交"/>
                         </td>
                     </tr>

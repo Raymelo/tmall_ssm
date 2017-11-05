@@ -112,3 +112,7 @@ ul.pagination a.current {
 td, th {
     font-size: 14px;
 }
+
+tr.submitTR td {
+    text-align: center;
+}
