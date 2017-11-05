@@ -10,10 +10,7 @@
             if (!checkEmpty("name", "分类名称")) {
                 return false;
             }
-            if (!checkEmpty("categoryPic", "分类图片")) {
-                return false;
-            }
-            return true;
+            return checkEmpty("categoryPic", "分类图片");
         });
     });
 </script>
@@ -76,7 +73,7 @@
                     </tr>
                     <tr class="submitTR">
                         <td colspan="2" align="center">
-                            <button type="submit" class="btn btn-success">提 交</button>
+                            <input type="submit" class="btn btn-success" value="提 交"/>
                         </td>
                     </tr>
                 </table>
