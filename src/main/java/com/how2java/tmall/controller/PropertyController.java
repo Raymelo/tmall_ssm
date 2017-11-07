@@ -44,7 +44,7 @@ public class PropertyController {
         return "admin/editProperty";
     }
 
-    @RequestMapping
+    @RequestMapping("admin_property_list")
     public String list(int cid, Model model, Page page) {
         Category category = categoryService.get(cid);
 
