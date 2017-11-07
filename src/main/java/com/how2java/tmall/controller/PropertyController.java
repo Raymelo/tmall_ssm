@@ -44,6 +44,12 @@ public class PropertyController {
         return "admin/editProperty";
     }
 
+    @RequestMapping("admin_property_update")
+    public String update(Property property) {
+        propertyService.update(property);
+        return "redirect:admin_property_list?cid=" + property.getCid();
+    }
+
     @RequestMapping("admin_property_list")
     public String list(int cid, Model model, Page page) {
         Category category = categoryService.get(cid);
