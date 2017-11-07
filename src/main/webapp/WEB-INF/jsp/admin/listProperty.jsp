@@ -21,7 +21,7 @@
         <li class="active">属性管理</li>
     </ol>
     <div class="listDataTableDiv">
-        <table class="table table-striped table-bordered table-hover  table-condensed">
+        <table class="table table-striped table-bordered table-hover table-condensed">
             <thead>
             <tr class="success">
                 <th>ID</th>
