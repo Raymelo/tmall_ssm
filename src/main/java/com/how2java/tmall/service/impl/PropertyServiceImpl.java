@@ -5,9 +5,11 @@ import com.how2java.tmall.pojo.Property;
 import com.how2java.tmall.pojo.PropertyExample;
 import com.how2java.tmall.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PropertyServiceImpl implements PropertyService {
 
     @Autowired
