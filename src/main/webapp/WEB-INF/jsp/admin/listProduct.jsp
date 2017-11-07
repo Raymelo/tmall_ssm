@@ -109,7 +109,7 @@
                         <td><input id="stock" value="99" name="stock" type="text" class="form-control"></td>
                     </tr>
                     <tr class="submitTR">
-                        <td colspan="2" align="center">
+                        <td colspan="2">
                             <input type="hidden" name="cid" value="${c.id}">
                             <input type="submit" class="btn btn-success" value="提 交"/>
                         </td>

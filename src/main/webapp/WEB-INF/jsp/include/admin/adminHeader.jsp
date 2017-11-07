@@ -61,7 +61,7 @@
                 $("#" + id)[0].focus();
                 return false;
             }
-            if (parseInt(value) !== value) {
+            if (isNaN(value)) {
                 alert(name + "必须是整数");
                 $("#" + id)[0].focus();
                 return false;
