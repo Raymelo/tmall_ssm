@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Leiziqin
@@ -36,7 +37,8 @@ public class ProductImageController {
         String imageFolder;
         String imageFolder_small = null;
         String imageFolder_middle = null;
-        if (ProductImageService.TYPE_SINGLE.equals(productImage.getType())) {
+        boolean isTypeSingle = Objects.equals(ProductImageService.TYPE_SINGLE, productImage.getType());
+        if (isTypeSingle) {
             imageFolder = session.getServletContext().getRealPath("img/productSingle");
             imageFolder_small = session.getServletContext().getRealPath("img/productSingle_small");
             imageFolder_middle = session.getServletContext().getRealPath("img/productSingle_middle");
@@ -49,7 +51,7 @@ public class ProductImageController {
             uploadedImageFile.getImage().transferTo(file);
             BufferedImage bufferedImage = ImageUtil.change2jpg(file);
             ImageIO.write(bufferedImage, "jpg", file);
-            if (ProductImageService.TYPE_SINGLE.equals(productImage.getType())) {
+            if (isTypeSingle) {
                 File f_small = new File(imageFolder_small, fileName);
                 File f_middle = new File(imageFolder_middle, fileName);
 
@@ -70,22 +72,21 @@ public class ProductImageController {
         String imageFolder;
         String imageFolder_small;
         String imageFolder_middle;
-
+        File imageFile;
         if (ProductImageService.TYPE_SINGLE.equals(productImage.getType())) {
             imageFolder = session.getServletContext().getRealPath("img/productSingle");
             imageFolder_small = session.getServletContext().getRealPath("img/productSingle_small");
             imageFolder_middle = session.getServletContext().getRealPath("img/productSingle_middle");
-            File imageFile = new File(imageFolder, fileName);
+            imageFile = new File(imageFolder, fileName);
             File f_small = new File(imageFolder_small, fileName);
             File f_middle = new File(imageFolder_middle, fileName);
-            imageFile.delete();
             f_small.delete();
             f_middle.delete();
         } else {
             imageFolder = session.getServletContext().getRealPath("img/productDetail");
-            File imageFile = new File(imageFolder, fileName);
-            imageFile.delete();
+            imageFile = new File(imageFolder, fileName);
         }
+        imageFile.delete();
         productImageService.delete(id);
 
         return "redirect:admin_productImage_list?pid=" + productImage.getPid();

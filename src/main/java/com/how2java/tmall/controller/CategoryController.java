@@ -43,8 +43,8 @@ public class CategoryController {
         categoryService.add(c);
         File imageFolder = new File(session.getServletContext().getRealPath("img/category"));
         File file = new File(imageFolder, c.getId() + ".jpg");
-        if (!file.getParentFile().exists()) {
-            file.getParentFile().mkdirs();
+        if (!imageFolder.exists()) {
+            imageFolder.mkdirs();
         }
         uploadedImageFile.getImage().transferTo(file);
         BufferedImage img = ImageUtil.change2jpg(file);
