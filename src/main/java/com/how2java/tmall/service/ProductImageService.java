@@ -20,5 +20,12 @@ public interface ProductImageService {
 
     ProductImage get(int id);
 
+    /**
+     * 根据产品ID和图片类型查询
+     *
+     * @param pid  产品ID
+     * @param type 图片类型
+     * @return
+     */
     List<ProductImage> list(int pid, String type);
 }
