@@ -52,6 +52,7 @@ public class ProductServiceImpl implements ProductService {
         productExample.setOrderByClause("id desc");
         List<Product> products = productMapper.selectByExample(productExample);
         setCategory(products);
+        setFirstProductImage(products);
         return products;
     }
 
