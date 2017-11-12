@@ -19,7 +19,6 @@
             var parentSpan = $(this).parent("span");
             parentSpan.css("border", "1px solid yellow");
             $.post(page, param, function (result) {
-                    console.log(result);
                     if ("success" === result) {
                         parentSpan.css("border", "1px solid green");
                     } else {
