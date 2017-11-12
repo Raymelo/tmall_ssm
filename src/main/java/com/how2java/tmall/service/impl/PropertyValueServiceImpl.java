@@ -31,7 +31,7 @@ public class PropertyValueServiceImpl implements PropertyValueService {
             if (propertyValue == null) {
                 propertyValue = new PropertyValue();
                 propertyValue.setPid(product.getId());
-                propertyValue.setPtid(propertyValue.getId());
+                propertyValue.setPtid(property.getId());
                 propertyValueMapper.insert(propertyValue);
             }
         }
@@ -59,7 +59,7 @@ public class PropertyValueServiceImpl implements PropertyValueService {
         propertyValueExample.createCriteria().andPidEqualTo(pid);
         List<PropertyValue> propertyValues = propertyValueMapper.selectByExample(propertyValueExample);
         for (PropertyValue propertyValue : propertyValues) {
-            Property property = propertyService.get(propertyValue.getPid());
+            Property property = propertyService.get(propertyValue.getPtid());
             propertyValue.setProperty(property);
         }
         return propertyValues;
